@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endurance Exchange 2027 — Call for Presenters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #002855;
+      --navy-dark: #001a3a;
+      --red: #C8102E;
+      --red-hover: #a00d24;
+      --gold: #D4A843;
+      --light-bg: #f4f6f8;
+      --white: #ffffff;
+      --gray-100: #f0f2f5;
+      --gray-200: #e2e6ea;
+      --gray-300: #ccd1d9;
+      --gray-500: #6b7785;
+      --gray-700: #3a4554;
+      --gray-900: #1a2332;
+      --success: #1a8a5c;
+      --error: #c8102e;
+      --info-bg: #edf4fc;
+      --info-border: #b8d4f0;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,40,85,0.08);
+      --shadow-md: 0 4px 16px rgba(0,40,85,0.1);
+      --shadow-lg: 0 8px 32px rgba(0,40,85,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, sans-serif;
+      background: var(--light-bg);
+      color: var(--gray-900);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .form-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* ── Header / Banner ── */
+    .form-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 36px 40px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(212, 168, 67, 0.08);
+    }
+
+    .form-header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 30%;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(200, 16, 46, 0.06);
+    }
+
+    .form-header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-header-text { flex: 1; }
+
+    .form-header-logo {
+      width: 100px;
+      height: auto;
+      flex-shrink: 0;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 600px) {
+      .form-header-logo { width: 70px; }
+    }
+
+    .form-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .form-header .subtitle {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    .form-header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+      font-weight: 300;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    .gold-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--red), var(--gold));
+    }
+
+    /* ── Form Body ── */
+    .form-body {
+      background: var(--white);
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 36px 40px 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ── Sections ── */
+    .form-section {
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .form-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 8px;
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title .icon {
+      width: 28px;
+      height: 28px;
+      background: var(--gray-100);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Field Layout ── */
+    .field-row {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .field-row.two-col { grid-template-columns: 1fr 1fr; }
+    .field-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+
+    @media (max-width: 600px) {
+      .field-row.two-col,
+      .field-row.three-col { grid-template-columns: 1fr; }
+      .form-header, .form-body { padding-left: 24px; padding-right: 24px; }
+    }
+
+    .field-group { display: flex; flex-direction: column; }
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    label .required { color: var(--red); margin-left: 2px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      color: var(--gray-900);
+      background: var(--white);
+      border: 1.5px solid var(--gray-300);
+      border-radius: 6px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(0,40,85,0.1);
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--gray-300); }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── Radio Groups ── */
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 6px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .radio-item:hover {
+      border-color: var(--navy);
+      background: var(--gray-100);
+    }
+
+    .radio-item.selected {
+      border-color: var(--navy);
+      background: rgba(0,40,85,0.05);
+    }
+
+    .radio-item input { width: 16px; height: 16px; accent-color: var(--navy); cursor: pointer; }
+    .radio-item span { font-size: 0.9rem; font-weight: 500; color: var(--gray-700); }
+
+    /* ── Conditional field ── */
+    .conditional-field {
+      display: none;
+      margin-top: 8px;
+    }
+
+    .conditional-field.active {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Upload Section ── */
+    .upload-section {
+      padding: 24px;
+      background: rgba(0,40,85,0.04);
+      border: 1.5px solid var(--navy);
+      border-radius: var(--radius);
+      margin-top: 4px;
+    }
+
+    .upload-section .upload-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .upload-section p {
+      font-size: 0.88rem;
+      color: var(--gray-700);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .upload-btn:hover { background: var(--navy-dark); }
+
+    .upload-reminder {
+      font-size: 0.82rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+      padding: 12px;
+      background: rgba(212,168,67,0.1);
+      border-radius: 4px;
+      border-left: 3px solid var(--gold);
+      margin-top: 14px;
+    }
+
+    /* ── Footer Note ── */
+    .footer-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-radius: 6px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .footer-note .note-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .footer-note .note-text {
+      font-size: 0.86rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+    }
+
+    /* ── Submit ── */
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .btn-submit {
+      padding: 13px 36px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      background: var(--red);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-submit:hover { background: var(--red-hover); box-shadow: var(--shadow-md); }
+    .btn-submit:active { transform: scale(0.98); }
+    .btn-submit:disabled { background: var(--gray-300); cursor: not-allowed; box-shadow: none; }
+
+    .status-msg {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .status-msg.visible { opacity: 1; }
+    .status-msg.success { color: var(--success); }
+    .status-msg.error { color: var(--error); }
+
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .btn-submit.loading .spinner { display: inline-block; }
+    .btn-submit.loading .btn-text { display: none; }
+
+    /* ── Success Overlay ── */
+    .success-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,40,85,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-overlay.show { display: flex; animation: fadeIn 0.3s ease; }
+
+    .success-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: var(--shadow-lg);
+      animation: slideUp 0.4s ease;
+    }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .success-icon svg { width: 28px; height: 28px; stroke: white; stroke-width: 2.5; fill: none; }
+
+    .success-card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .success-card p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .btn-reset {
+      padding: 10px 28px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--gray-100);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-reset:hover { background: var(--gray-200); }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form id="presenterForm" novalidate>
+
+      <!-- ════════════════ HEADER / BANNER ════════════════ -->
+      <div class="form-header">
+        <div class="form-header-inner">
+          <div class="form-header-text">
+            <h1>Endurance Exchange 2027</h1>
+            <div class="subtitle">Call for Presenters</div>
+            <p>We're looking for passionate, knowledgeable presenters to share their expertise at Endurance Exchange 2027. Complete the form below to submit your presentation proposal. All sessions are 40–50 minutes in length.</p>
+          </div>
+          <!-- ✏️ UPDATE: Replace with your logo URL -->
+          <img class="form-header-logo" src="https://raw.githubusercontent.com/JustinTrolle/USAT-Images/2c2739a6b3ccf13706c031dedb4dfa1babf0a1e1/USA_Triathlon_Education_Logo_Transparent.png" alt="USA Triathlon Education">
+        </div>
+      </div>
+      <div class="gold-bar"></div>
+
+      <div class="form-body">
+
+        <!-- ════════════════ SECTION 1: PRESENTER INFO ════════════════ -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="icon">👤</span> Presenter Information
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" required placeholder="First and Last Name">
+            </div>
+            <div class="field-group">
+              <label for="emailAddress">Email Address <span class="required">*</span></label>
+              <input type="email" id="emailAddress" name="emailAddress" required placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="(555) 123-4567">
+            </div>
+            <div class="field-group">
+              <label for="organization">Organization / Affiliation</label>
+              <input type="text" id="organization" name="organization" placeholder="Company, club, or university">
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="jobTitle">Job Title / Role</label>
+              <input type="text" id="jobTitle" name="jobTitle" placeholder="Your current role">
+            </div>
+            <div class="field-group">
+              <label>Previous Presentation Experience <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-item" onclick="selectRadio(this, 'previousExperience', 'Yes')">
+                  <input type="radio" name="previousExperience" value="Yes">
+                  <span>Yes</span>
+                </label>
+                <label class="radio-item" onclick="selectRadio(this, 'previousExperience', 'No')">
+                  <input type="radio" name="previousExperience" value="No">
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conditional: Previous experience details -->
+          <div class="conditional-field" id="previousDetailsGroup">
+            <div class="field-row">
+              <div class="field-group">
+                <label for="previousDetails">Please describe your previous presentation experience</label>
+                <textarea id="previousDetails" name="previousDetails" rows="3"
+                  placeholder="Year(s), event name(s), and topic(s) presented"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="shortBio">Short Bio <span class="required">*</span></label>
+              <textarea id="shortBio" name="shortBio" required rows="3"
+                placeholder="A brief professional bio for marketing and program use if selected (150–250 words recommended)"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════ SECTION 2: PRESENTATION DETAILS ════════════════ -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="icon">🎤</span> Presentation Details
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="presentationTitle">Presentation Title <span class="required">*</span></label>
+              <input type="text" id="presentationTitle" name="presentationTitle" required placeholder="Enter your proposed presentation title">
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="conferenceTrack">Conference Track <span class="required">*</span></label>
+              <select id="conferenceTrack" name="conferenceTrack" required>
+                <option value="" disabled selected>Select a track</option>
+                <option value="Coaches">Coaches</option>
+                <option value="Race Directors">Race Directors</option>
+                <option value="Race Officials">Race Officials</option>
+                <option value="Industry Experts">Industry Experts</option>
+                <option value="USA Triathlon Partners">USA Triathlon Partners</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="topicCategory">Primary Topic Category <span class="required">*</span></label>
+              <select id="topicCategory" name="topicCategory" required onchange="toggleOtherTopic()">
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Training & Physiology">Training & Physiology</option>
+                <option value="Sport Science & Research">Sport Science & Research</option>
+                <option value="Race Operations & Management">Race Operations & Management</option>
+                <option value="Risk Management & Safety">Risk Management & Safety</option>
+                <option value="Business & Marketing">Business & Marketing</option>
+                <option value="Athlete Development">Athlete Development</option>
+                <option value="Youth & Junior Development">Youth & Junior Development</option>
+                <option value="Coaching Methodology">Coaching Methodology</option>
+                <option value="Inclusivity & Accessibility">Inclusivity & Accessibility</option>
+                <option value="Technology & Innovation">Technology & Innovation</option>
+                <option value="Officiating">Officiating</option>
+                <option value="Club Development">Club Development</option>
+                <option value="Nutrition & Recovery">Nutrition & Recovery</option>
+                <option value="Mental Performance">Mental Performance</option>
+                <option value="Para-Triathlon">Para-Triathlon</option>
+                <option value="Other">Other (please specify)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Conditional: Other topic -->
+          <div class="conditional-field" id="otherTopicGroup">
+            <div class="field-row">
+              <div class="field-group">
+                <label for="otherTopic">Please Specify Topic</label>
+                <input type="text" id="otherTopic" name="otherTopic" placeholder="Describe your topic category">
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label for="audienceLevel">Target Audience Level <span class="required">*</span></label>
+              <select id="audienceLevel" name="audienceLevel" required>
+                <option value="" disabled selected>Select level</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="All Levels">All Levels</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="sessionFormat">Session Format Preference <span class="required">*</span></label>
+              <select id="sessionFormat" name="sessionFormat" required>
+                <option value="" disabled selected>Select format</option>
+                <option value="Breakout Session">Breakout Session</option>
+                <option value="Workshop / Hands-On">Workshop / Hands-On</option>
+                <option value="Panel Discussion">Panel Discussion</option>
+                <option value="Keynote">Keynote</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="presentationSummary">Presentation Summary <span class="required">*</span></label>
+              <textarea id="presentationSummary" name="presentationSummary" required rows="4"
+                placeholder="Provide an overview of your presentation content and the value it brings to attendees."></textarea>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="keyLearnings">Key Learning Objectives / Takeaways <span class="required">*</span></label>
+              <textarea id="keyLearnings" name="keyLearnings" required rows="4"
+                placeholder="What will attendees walk away knowing or being able to do after your session?"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════ SECTION 3: ADDITIONAL INFO ════════════════ -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="icon">💬</span> Additional Information
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="additionalComments">Anything else you'd like us to know?</label>
+              <textarea id="additionalComments" name="additionalComments" rows="3"
+                placeholder="Special requests, additional context, co-presenter information, etc."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════ SECTION 4: UPLOAD ════════════════ -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="icon">📁</span> Previous Presentation Examples
+          </div>
+
+          <div class="upload-section">
+            <div class="upload-title">Upload Examples of Previous Presentations</div>
+            <p>If you have examples of previous presentations, slide decks, or supporting materials, please upload them to the shared Google Drive folder below. This is optional but strongly encouraged.</p>
+
+            <!-- ✏️ UPDATE: Replace the href below with your Google Drive folder link -->
+            <a class="upload-btn" id="uploadLink" href="https://drive.google.com/drive/folders/1l-SNita-nmWMcbpp959MGR-WtVU23SvE?usp=sharing" target="_blank">Open Upload Folder →</a>
+
+            <div class="upload-reminder">
+              <strong>⚠️ File Naming Guidelines:</strong><br>
+              • Create a folder with <strong>your full name</strong> inside the shared folder.<br>
+              • Name each file clearly (e.g., "Smith_TrainingPeaks_2024.pptx").<br>
+              • If uploading multiple files, number them for clarity.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════ FOOTER NOTE ════════════════ -->
+        <div class="footer-note">
+          <span class="note-icon">📌</span>
+          <div class="note-text">
+            <strong>Please Note:</strong> All presenters selected to speak will be required to submit a digital copy of their presentation well in advance of the conference.
+          </div>
+        </div>
+
+        <!-- ════════════════ SUBMIT ════════════════ -->
+        <div class="submit-row">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">Submit Presentation Proposal</span>
+            <span class="spinner"></span>
+          </button>
+          <span class="status-msg" id="statusMsg"></span>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <!-- ════════════════ SUCCESS OVERLAY ════════════════ -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-card">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Proposal Submitted!</h2>
+      <p>Thank you for your interest in presenting at Endurance Exchange 2027. Our team will review all submissions and follow up with selected presenters. We appreciate your expertise and commitment to the triathlon community.</p>
+      <button class="btn-reset" onclick="resetForm()">Submit Another Proposal</button>
+    </div>
+  </div>
+
+  <script>
+    // ============================================================
+    // 🔧 CONFIGURATION — PASTE YOUR GOOGLE APPS SCRIPT URL BELOW
+    // ============================================================
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbweBj5R5W98cBy-e0-7vnR3cNAIZ0kYW3bDvxaLxg9hlw8VPB_wQ5x1Jwj7vuKu4r8X/exec';
+    // ============================================================
+
+    // ── Radio button selection ──
+    function selectRadio(label, groupName, value) {
+      document.querySelectorAll(`input[name="${groupName}"]`).forEach(r => {
+        r.closest('.radio-item').classList.remove('selected');
+      });
+      setTimeout(() => {
+        label.classList.add('selected');
+
+        // Show/hide previous experience details
+        if (groupName === 'previousExperience') {
+          const detailGroup = document.getElementById('previousDetailsGroup');
+          if (value === 'Yes') {
+            detailGroup.classList.add('active');
+          } else {
+            detailGroup.classList.remove('active');
+            document.getElementById('previousDetails').value = '';
+          }
+        }
+      }, 0);
+    }
+
+    // ── Other topic toggle ──
+    function toggleOtherTopic() {
+      const val = document.getElementById('topicCategory').value;
+      const group = document.getElementById('otherTopicGroup');
+      if (val === 'Other') {
+        group.classList.add('active');
+      } else {
+        group.classList.remove('active');
+        document.getElementById('otherTopic').value = '';
+      }
+    }
+
+    // ── Status message ──
+    function showStatus(msg, type) {
+      const el = document.getElementById('statusMsg');
+      el.textContent = msg;
+      el.className = 'status-msg visible ' + type;
+      if (type === 'error') setTimeout(() => el.classList.remove('visible'), 5000);
+    }
+
+    // ── Validation ──
+    function validate() {
+      const required = [
+        { id: 'fullName', msg: 'Please enter your full name.' },
+        { id: 'emailAddress', msg: 'Please enter your email address.' },
+        { id: 'phoneNumber', msg: 'Please enter your phone number.' },
+        { id: 'shortBio', msg: 'Please enter a short bio.' },
+        { id: 'presentationTitle', msg: 'Please enter a presentation title.' },
+        { id: 'conferenceTrack', msg: 'Please select a conference track.' },
+        { id: 'topicCategory', msg: 'Please select a topic category.' },
+        { id: 'audienceLevel', msg: 'Please select a target audience level.' },
+        { id: 'sessionFormat', msg: 'Please select a session format preference.' },
+        { id: 'presentationSummary', msg: 'Please enter a presentation summary.' },
+        { id: 'keyLearnings', msg: 'Please enter key learning objectives.' }
+      ];
+
+      for (const field of required) {
+        const el = document.getElementById(field.id);
+        if (!el.value.trim()) {
+          showStatus(field.msg, 'error');
+          el.focus();
+          return false;
+        }
+      }
+
+      // Email validation
+      const email = document.getElementById('emailAddress').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showStatus('Please enter a valid email address.', 'error');
+        document.getElementById('emailAddress').focus();
+        return false;
+      }
+
+      // Previous experience radio required
+      const expChecked = document.querySelector('input[name="previousExperience"]:checked');
+      if (!expChecked) {
+        showStatus('Please indicate if you have previous presentation experience.', 'error');
+        return false;
+      }
+
+      // If "Yes" was selected, previous details should be filled
+      if (expChecked.value === 'Yes' && !document.getElementById('previousDetails').value.trim()) {
+        showStatus('Please describe your previous presentation experience.', 'error');
+        document.getElementById('previousDetails').focus();
+        return false;
+      }
+
+      // If "Other" topic is selected, must specify
+      if (document.getElementById('topicCategory').value === 'Other' && !document.getElementById('otherTopic').value.trim()) {
+        showStatus('Please specify your topic category.', 'error');
+        document.getElementById('otherTopic').focus();
+        return false;
+      }
+
+      return true;
+    }
+
+    // ── Submit ──
+    document.getElementById('presenterForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (!validate()) return;
+
+      const btn = document.getElementById('submitBtn');
+      btn.classList.add('loading');
+      btn.disabled = true;
+
+      const expRadio = document.querySelector('input[name="previousExperience"]:checked');
+
+      const payload = {
+        fullName:              document.getElementById('fullName').value.trim(),
+        emailAddress:          document.getElementById('emailAddress').value.trim(),
+        phoneNumber:           document.getElementById('phoneNumber').value.trim(),
+        organization:          document.getElementById('organization').value.trim(),
+        jobTitle:              document.getElementById('jobTitle').value.trim(),
+        shortBio:              document.getElementById('shortBio').value.trim(),
+        previousExperience:    expRadio ? expRadio.value : '',
+        previousDetails:       document.getElementById('previousDetails').value.trim(),
+        presentationTitle:     document.getElementById('presentationTitle').value.trim(),
+        conferenceTrack:       document.getElementById('conferenceTrack').value,
+        topicCategory:         document.getElementById('topicCategory').value,
+        otherTopic:            document.getElementById('otherTopic').value.trim(),
+        audienceLevel:         document.getElementById('audienceLevel').value,
+        sessionFormat:         document.getElementById('sessionFormat').value,
+        presentationSummary:   document.getElementById('presentationSummary').value.trim(),
+        keyLearnings:          document.getElementById('keyLearnings').value.trim(),
+        additionalComments:    document.getElementById('additionalComments').value.trim()
+      };
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        document.getElementById('successOverlay').classList.add('show');
+
+      } catch (err) {
+        showStatus('Submission failed. Please try again.', 'error');
+        console.error('Submission error:', err);
+      } finally {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+      }
+    });
+
+    // ── Reset ──
+    function resetForm() {
+      document.getElementById('presenterForm').reset();
+      document.getElementById('successOverlay').classList.remove('show');
+      document.getElementById('previousDetailsGroup').classList.remove('active');
+      document.getElementById('otherTopicGroup').classList.remove('active');
+      document.querySelectorAll('.radio-item').forEach(el => el.classList.remove('selected'));
+      document.getElementById('statusMsg').className = 'status-msg';
+    }
+  </script>
+
+</body>
+</html>
